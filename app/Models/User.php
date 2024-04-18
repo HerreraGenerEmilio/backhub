@@ -44,4 +44,24 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function ofertas()
+    {
+        return $this->hasMany(Oferta::class, 'publicador');
+    }
+
+    public function empresa()
+    {
+        return $this->belongsTo(Empresa::class, 'empresa');
+    }
+
+    public function historialesPublicados()
+    {
+        return $this->hasMany(Historial::class, 'publicador');
+    }
+
+    public function historialesSuscritos()
+    {
+        return $this->hasMany(Historial::class, 'suscriptor');
+    }
 }
