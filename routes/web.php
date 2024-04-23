@@ -10,7 +10,7 @@ Route::get('/', function () {
 });
 
 Route::get('/api/ofertas', [OfertaController::class, 'index']);
-Route::get('/check-auth-status', [AuthController::class, 'checkAuthStatus']);
+Route::get('/api/check-auth-status', [AuthController::class, 'checkAuthStatus']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
