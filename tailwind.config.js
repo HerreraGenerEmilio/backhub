@@ -14,6 +14,9 @@ export default {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
+            colors: {
+                'custom': '#3a589b', // Define tu propio color personalizado
+              },
         },
     },
 
