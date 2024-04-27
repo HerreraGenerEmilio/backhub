@@ -16,6 +16,19 @@ class OfertaController extends Controller
         return $ofertas;
     }
 
+    public function page(Request $request)
+    {
+        // Obtener los parámetros de la solicitud
+        $page = $request->input('page', 1); // Si no se proporciona, establecerá el valor predeterminado en 1
+        $pageSize = $request->input('pageSize', 10);
+
+        // Realizar la consulta paginada utilizando Eloquent
+        $results = Oferta::paginate($pageSize, ['*'], 'page', $page);
+
+        // Retornar los resultados paginados
+        return response()->json($results);
+    }
+
     /**
      * Show the form for creating a new resource.
      */

@@ -30,8 +30,19 @@ class AuthenticatedSessionController extends Controller
         $request->session()->regenerate();
 
         /* return redirect()->intended(route('dashboard', absolute: false)); */
-        return redirect('http://localhost:4200/home');
+       return $this->redirectTo();
     }
+
+    public function redirectTo()
+    {
+        if (Auth::user()->isAdmin()) {
+            return redirect('http://localhost:4200/test');
+        } else {
+            return redirect('http://localhost:4200/home');
+        }
+    }
+
+    
 
     /**
      * Destroy an authenticated session.

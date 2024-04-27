@@ -64,4 +64,15 @@ class User extends Authenticatable
     {
         return $this->hasMany(Historial::class, 'suscriptor');
     }
+
+    public function isAdmin()
+    {
+        // Your logic to determine if the user is an admin
+        // For example, if you have an 'is_admin' column in your users table:
+        if ($this->empresa !== null) {
+            return $this->empresa;
+        }else{
+            return null;
+        }
+    }
 }

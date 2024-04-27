@@ -13,9 +13,24 @@ class AuthController extends Controller
         Log::info('Solicitud recibida:', ['request' => $request->all()]);
 
         $authenticated = Auth::check();
-
+        $userCompany = Auth::user()->isAdmin();
+        if ($userCompany) {
+            $admin = true;
+        } else {
+            $admin = false;
+        }
         return response()->json([
             'authenticated' => $authenticated,
+            'isAdmin' => $admin
         ]);
+    }
+
+    public function logoutt(Request $request)
+    {
+
+        Auth::guard('web')->logout();
+    $request->session()->invalidate();
+
+    $request->session()->regenerateToken();
     }
 }

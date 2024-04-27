@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OfertaController;
@@ -9,8 +10,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/api/ofertas', [OfertaController::class, 'index']);
+Route::get('/api/ofertas', [OfertaController::class, 'page']);
 Route::get('/api/check-auth-status', [AuthController::class, 'checkAuthStatus']);
+Route::get('/api/logoutt', [AuthController::class, 'logoutt']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
