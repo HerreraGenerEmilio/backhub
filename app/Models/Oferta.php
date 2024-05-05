@@ -10,6 +10,8 @@ class Oferta extends Model
     use HasFactory;
     
     protected $table = 'oferta';
+    
+    protected $fillable = ['nombre', 'descripcion', 'imagen', 'publicador', 'sector'];
 
     public function publicador()
     {

@@ -5,44 +5,28 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Oferta;
+use Faker\Factory as Faker;
 
 class OfertaSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
-    public function run(): void
+    public function run()
     {
-        Oferta::create([
-            'nombre' => 'Oferta1',
-            'descripcion' => 'Descubre las últimas tecnologías con nuestra Oferta1. ¡No te la pierdas!',
-            'imagen' => '../../../assets/imgs/empresas/empresaTec.png',
-            'publicador' => 1,
-            'sector' => 1,
-        ]);
+        $faker = Faker::create();
 
-        Oferta::create([
-            'nombre' => 'Oferta2',
-            'descripcion' => 'Explora nuevas oportunidades con la Oferta2 de Empresa2. ¡Inscríbete ahora!',
-            'imagen' => '../../../assets/imgs/empresas/empresaHR.png',
-            'publicador' => 2,
-            'sector' => 2,
-        ]);
-
-        Oferta::create([
-            'nombre' => 'Oferta3',
-            'descripcion' => 'Disfruta de experiencias únicas con la Oferta3 de Empresa3. ¡Ven y únete a nosotros!',
-            'imagen' => '../../../assets/imgs/empresas/empresaHosteleria.png',
-            'publicador' => 3,
-            'sector' => 3,
-        ]);
-
-        Oferta::create([
-            'nombre' => 'Oferta4',
-            'descripcion' => 'Optimiza tu logística con la Oferta4 de Empresa4. ¡No esperes más!',
-            'imagen' => '../../../assets/imgs/empresas/empresaLog.png',
-            'publicador' => 4,
-            'sector' => 4,
-        ]);
+        for ($i = 0; $i < 20; $i++) { // Genera 20 ofertas
+            $employer = $faker->numberBetween(1, 4);
+            $logo = ['../../../assets/imgs/empresas/empresaTec.png', '../../../assets/imgs/empresas/empresaHR.png',
+            '../../../assets/imgs/empresas/empresaHost.png', '../../../assets/imgs/empresas/empresaLog.png'];
+            Oferta::create([
+                'nombre' => $faker->sentence,
+                'descripcion' => $faker->paragraph,
+                'imagen' => $logo[$employer - 1],
+                'publicador' => $employer,
+                'sector' => $faker->numberBetween(1, 4), // Números aleatorios entre 1 y 4
+            ]);
+        }
     }
 }

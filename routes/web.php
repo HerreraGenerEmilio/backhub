@@ -11,6 +11,16 @@ Route::get('/', function () {
 });
 
 Route::get('/api/ofertas', [OfertaController::class, 'page']);
+Route::post('/api/ofertas', [OfertaController::class, 'store']);
+Route::put('/api/ofertas', [OfertaController::class, 'update']);
+Route::delete('/api/ofertas/{id}', [OfertaController::class, 'destroy']);
+Route::get('/api/ofertas/{id}', [OfertaController::class, 'show']);
+//adicionales
+Route::get('/api/ofertasUser', [OfertaController::class, 'user']);
+Route::get('/api/ofertasImg', [OfertaController::class, 'img']);
+
+Route::get('/api/token', [OfertaController::class, 'token']);
+
 Route::get('/api/check-auth-status', [AuthController::class, 'checkAuthStatus']);
 Route::get('/api/logoutt', [AuthController::class, 'logoutt']);
 

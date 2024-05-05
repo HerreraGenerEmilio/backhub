@@ -10,7 +10,7 @@ class AuthController extends Controller
 {
     public function checkAuthStatus(Request $request)
     {
-        Log::info('Solicitud recibida:', ['request' => $request->all()]);
+        Log::info('Solicitud recibida test:', ['request' => $request->all()]);
 
         $authenticated = Auth::check();
         $userCompany = Auth::user()->isAdmin();
