@@ -17,15 +17,15 @@ class OfertaSeeder extends Seeder
         $faker = Faker::create();
 
         for ($i = 0; $i < 20; $i++) { // Genera 20 ofertas
-            $employer = $faker->numberBetween(1, 4);
+            $employer = $faker->numberBetween(6, 9);
             $logo = ['../../../assets/imgs/empresas/empresaTec.png', '../../../assets/imgs/empresas/empresaHR.png',
             '../../../assets/imgs/empresas/empresaHost.png', '../../../assets/imgs/empresas/empresaLog.png'];
             Oferta::create([
                 'nombre' => $faker->sentence,
                 'descripcion' => $faker->paragraph,
-                'imagen' => $logo[$employer - 1],
+                'imagen' => $logo[$employer - 6],
                 'publicador' => $employer,
-                'sector' => $faker->numberBetween(1, 4), // Números aleatorios entre 1 y 4
+                'sector' => $faker->numberBetween(5, 8), // Números aleatorios entre 1 y 4
             ]);
         }
     }
