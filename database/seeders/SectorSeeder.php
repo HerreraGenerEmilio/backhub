@@ -28,12 +28,12 @@ class SectorSeeder extends Seeder
 
         Sector::create([
             'nombre' => 'Hostelería',
-            'logo' => '../../../assets/imgs/sectores/Hostelería.png',
+            'logo' => '../../../assets/imgs/sectores/Host.png',
         ]);
 
         Sector::create([
             'nombre' => 'Logística y paquetería',
-            'logo' => '../../../assets/imgs/sectores/Hostelería.png',
+            'logo' => '../../../assets/imgs/sectores/Log.png',
         ]);
         // Añade más sectores según tus necesidades...
     }

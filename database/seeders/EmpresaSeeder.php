@@ -20,28 +20,28 @@ class EmpresaSeeder extends Seeder
             'nombre' => 'Empresa1',
             'descripcion' => 'Descripción de la Empresa1',
             'logo' => '../../../assets/imgs/empresas/empresaTec.png',
-            'admin' => 1, // ID del usuario administrador
+            'admin' => 6, // ID del usuario administrador
         ]);
 
         Empresa::create([
             'nombre' => 'Empresa2',
             'descripcion' => 'Descripción de la Empresa2',
             'logo' => '../../../assets/imgs/empresas/empresaHR.png',
-            'admin' => 2, // ID del usuario administrador
+            'admin' => 7, // ID del usuario administrador
         ]);
 
         Empresa::create([
             'nombre' => 'Empresa3',
             'descripcion' => 'Descripción de la Empresa3',
-            'logo' => '../../../assets/imgs/empresas/empresaHosteleria.png',
-            'admin' => 3, // ID del usuario administrador
+            'logo' => '../../../assets/imgs/empresas/empresaHost.png',
+            'admin' => 8, // ID del usuario administrador
         ]);
 
         Empresa::create([
             'nombre' => 'Empresa4',
             'descripcion' => 'Descripción de la Empresa4',
             'logo' => '../../../assets/imgs/empresas/empresaLog.png',
-            'admin' => 4, // ID del usuario administrador
+            'admin' => 9, // ID del usuario administrador
         ]);
     }
 }
