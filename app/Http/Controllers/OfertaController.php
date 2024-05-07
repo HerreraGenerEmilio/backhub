@@ -45,7 +45,7 @@ class OfertaController extends Controller
      */
     public function store(Request $request)
     {
-        Log::info('Datos de la solicitud:', $request->all());
+        Log::info('Datos de la solicitud: entro a store:', $request->all());
         $request->validate([
             'nombre' => 'required|string',
             'descripcion' => 'required|string',
@@ -67,6 +67,7 @@ class OfertaController extends Controller
 
     public function token()
     {
+        
         return csrf_token();
     }
 
