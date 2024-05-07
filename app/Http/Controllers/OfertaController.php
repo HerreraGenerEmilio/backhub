@@ -45,7 +45,10 @@ class OfertaController extends Controller
      */
     public function store(Request $request)
     {
-        Log::info('Datos de la solicitud:', $request->all());
+        Log::info('Datos de la solicitud: testeame esta por favor funciona', $request->all());
+
+        $request = $request["test:"];
+
         $request->validate([
             'nombre' => 'required|string',
             'descripcion' => 'required|string',
@@ -84,8 +87,10 @@ class OfertaController extends Controller
     {
         $ofertas = Oferta::where('publicador', auth()->user()->id)->paginate(7); // Paginar con 10 resultados por página
         $username = auth()->user()->name;
+        $userId = auth()->user()->id;
 
         return [
+            'userId'=> $userId,
             'username' => $username,
             'ofertas' => $ofertas,
         ];
