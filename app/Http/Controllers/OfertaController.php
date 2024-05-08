@@ -47,8 +47,8 @@ class OfertaController extends Controller
     {
         Log::info('Datos de la solicitud: testeame esta por favor funciona', $request->all());
 
-        $request = $request["test:"];
-
+        
+       
         $request->validate([
             'nombre' => 'required|string',
             'descripcion' => 'required|string',
