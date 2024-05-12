@@ -32,13 +32,10 @@ class OfertaController extends Controller
         return response()->json($results);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
+   public function publi(){
+    $username = auth()->user()->name;
+    return response()->json($username, 200);
+   }
 
     /**
      * Store a newly created resource in storage.
@@ -102,13 +99,6 @@ class OfertaController extends Controller
         $emmpresa = Empresa::find($user->empresa); ;
         $img = $emmpresa->logo;
         return ['img' => $img];
-    }
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Oferta $oferta)
-    {
-        //
     }
 
     /**

@@ -15,7 +15,8 @@ return Application::configure(basePath: dirname(__DIR__))
             '/api/ofertas2', // <-- exclude this route
             '/api/ofertas',
             '/api/ofertasUser',
-            '/api/ofertas/*'
+            '/api/ofertas/*',
+            '/api/sectores*'
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {

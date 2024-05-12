@@ -38,7 +38,8 @@ class SectorController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $sector=Sector::find($id);
+        return response()->json($sector, 200);
     }
 
     /**

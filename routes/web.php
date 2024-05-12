@@ -20,8 +20,10 @@ Route::get('/api/ofertas/{id}', [OfertaController::class, 'show']);
 //adicionales
 Route::get('/api/ofertasUser', [OfertaController::class, 'user']);
 Route::get('/api/ofertasImg', [OfertaController::class, 'img']);
+Route::get('/api/ofertasPublicador', [OfertaController::class, 'publi']);
 //Sectores
 Route::get('/api/sectores', [SectorController::class, 'index']);
+Route::get('/api/sectores/{id}', [SectorController::class, 'show']);
 
 Route::get('/api/token', [OfertaController::class, 'token']);
 
