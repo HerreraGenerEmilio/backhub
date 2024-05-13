@@ -5,6 +5,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OfertaController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ContactoController;
 use App\Http\Controllers\SectorController;
 
 Route::get('/', function () {
@@ -17,10 +18,13 @@ Route::post('/api/ofertas2', [OfertaController::class, 'store']);
 Route::put('/api/ofertas', [OfertaController::class, 'update']);
 Route::delete('/api/ofertas/{id}', [OfertaController::class, 'destroy']);
 Route::get('/api/ofertas/{id}', [OfertaController::class, 'show']);
+
 //adicionales
 Route::get('/api/ofertasUser', [OfertaController::class, 'user']);
 Route::get('/api/ofertasImg', [OfertaController::class, 'img']);
 Route::get('/api/ofertasPublicador', [OfertaController::class, 'publi']);
+Route::post('/api/contacto', [ContactoController::class, 'store']);
+
 //Sectores
 Route::get('/api/sectores', [SectorController::class, 'index']);
 Route::get('/api/sectores/{id}', [SectorController::class, 'show']);

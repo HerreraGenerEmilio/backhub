@@ -16,7 +16,8 @@ return Application::configure(basePath: dirname(__DIR__))
             '/api/ofertas',
             '/api/ofertasUser',
             '/api/ofertas/*',
-            '/api/sectores*'
+            '/api/sectores*',
+            '/api/contacto*',
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
