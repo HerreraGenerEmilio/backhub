@@ -14,7 +14,7 @@ Route::get('/', function () {
 
 //Ofertas
 Route::get('/api/ofertas', [OfertaController::class, 'page']);
-Route::post('/api/ofertas2', [OfertaController::class, 'store']);
+Route::post('/api/ofertas', [OfertaController::class, 'store']);
 Route::put('/api/ofertas', [OfertaController::class, 'update']);
 Route::delete('/api/ofertas/{id}', [OfertaController::class, 'destroy']);
 Route::get('/api/ofertas/{id}', [OfertaController::class, 'show']);
